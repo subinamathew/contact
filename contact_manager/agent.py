@@ -2,6 +2,8 @@
 from google.adk.agents import Agent
 # Import the prompt module from the current package (contact_manager).
 from . import prompt
+# Import the sub-agent for drafting emails.
+from .subagents import email_drafter
 
 # Initialize the root agent for the contact manager.
 root_agent = Agent(
@@ -9,7 +11,9 @@ root_agent = Agent(
     model='gemini-2.0-flash-001',
     name='root_agent',  # A unique identifier for this agent.
     # A brief description of what this agent does.
-    description='A helpful assistant for user questions.',
+    description='A helpful assistant that gathers information to draft client emails.',
     # The initial set of instructions or system prompt for the agent.
-    instruction=prompt.OLIVE_PROMPT,
+    instruction=prompt.SECRETARY_PROMPT,
+    # Register the email drafting agent as a sub-agent.
+    sub_agents=[email_drafter.email_drafting_agent],
 )
