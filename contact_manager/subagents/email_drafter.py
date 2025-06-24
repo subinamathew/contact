@@ -7,7 +7,4 @@ email_drafting_agent = Agent(
     description='Drafts a professional introduction email to a client.',
     model='gemini-2.0-flash-001',
     instruction=email_prompt.EMAIL_DRAFT_PROMPT,
-    rag_config={
-        "source_path": "rag",
-    }
 )

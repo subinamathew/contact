@@ -5,7 +5,7 @@ from . import prompt
 # Import the sub-agent for drafting emails.
 from .subagents import email_drafter
 # Import the sub-agent for web research.
-from .subagents import researcher
+# from .subagents import researcher
 
 # Initialize the root agent for the contact manager.
 root_agent = Agent(
@@ -19,6 +19,6 @@ root_agent = Agent(
     # Register the email drafting agent as a sub-agent.
     sub_agents=[
         email_drafter.email_drafting_agent,
-        researcher.researcher_agent
+        # researcher.researcher_agent
     ],
 )
